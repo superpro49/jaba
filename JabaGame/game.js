@@ -3,10 +3,10 @@
  */
 /* eslint-disable no-console */
 
-const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
-const gameName = process.env.TELEGRAM_GAMENAME || 'YOUR_TELEGRAM_GAMENAME';
+const TOKEN = process.env.TELEGRAM_TOKEN || '607223777:AAEz8mJFpZtuquRFCYmc-SbtyXwKqtWX1lU';
+const gameName = process.env.TELEGRAM_GAMENAME || 'jaba';
 // Specify '0' to use ngrok i.e. localhost tunneling
-let url = process.env.URL || 'https://<PUBLIC-URL>';
+let url = process.env.URL || 'https://superpro49.github.io/jaba/JabaGame/';
 const port = process.env.PORT || 8080;
 
 const TelegramBot = require('../..');
