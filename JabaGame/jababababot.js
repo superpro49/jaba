@@ -2,13 +2,13 @@
 const express = require("express");
 const path = require("path");
 const TelegramBot = require("node-telegram-bot-api");
-const TOKEN = "513604411:AAGIHeqGcvQt-Cm45hQhnLdgDNs6uF8oNs0";
+const TOKEN = "607223777:AAEz8mJFpZtuquRFCYmc-SbtyXwKqtWX1lU";
 const server = express();
 const bot = new TelegramBot(TOKEN, { polling: true } );
 const port = process.env.PORT || 5000;
-const gameName = process.env.assholehunter || 'assholehunter';
+const gameName = process.env.jaba || 'jaba';
 const queries = {};
-const url = 'http://noirvortex.co.uk/assholehunter/Prozbot1.html';
+const url = 'https://superpro49.github.io/jaba/JabaGame/';
 const app = express();
 console.log("started");
 
@@ -57,7 +57,7 @@ bot.onText(/\/link (.+)/, (msg, match) => {
   bot.sendDocument(chatId, resp);
 });
 
-bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "This is an amusing joke HTML5 game that tests you reaction to a prostitute"));
+bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "fuck"));
 
 // bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 
