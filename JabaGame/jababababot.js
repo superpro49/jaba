@@ -8,7 +8,7 @@ const bot = new TelegramBot(TOKEN, { polling: true } );
 const port = process.env.PORT || 5000;
 const gameName = process.env.jaba || 'jaba';
 const queries = {};
-const url = 'https://superpro49.github.io/jaba/JabaGame/';
+const url = 'https://superpro49.github.io/jaba/JabaGame/index.html';
 const app = express();
 console.log("started");
 
@@ -59,63 +59,63 @@ bot.onText(/\/link (.+)/, (msg, match) => {
 
 bot.onText(/help/, (msg) => bot.sendMessage(msg.from.id, "fuck"));
 
-// bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
+ bot.onText(/start|game/, (msg) => bot.sendGame(msg.from.id, gameName));
 
-// bot.on("callback_query", function (query) {
-//     if (query.game_short_name !== gameName) {
-//       bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
-//     } else {
-//       queries[query.id] = query;
-//       let gameurl = "https://noirvortex.co.uk/assholehunter/Prozbot1.html?  id="+query.id;
-//       bot.answerCallbackQuery({
-//         callback_query_id: query.id,
-//         url: gameurl
-//       });
-//       console.log(gameurl);
-//     }
-//   });
+bot.on("callback_query", function (query) {
+     if (query.game_short_name !== gameName) {
+       bot.answerCallbackQuery(query.id, "Sorry, '" + query.game_short_name + "' is not available.");
+     } else {
+       queries[query.id] = query;
+       let gameurl = "https://superpro49.github.io/jaba/JabaGame/index.html id="+query.id;
+       bot.answerCallbackQuery({
+         callback_query_id: query.id,
+         url: gameurl
+       });
+       console.log(gameurl);
+     }
+   });
 
-//   bot.on("inline_query", function(iq) {
-//     bot.answerInlineQuery(iq.id, [ { type: "game", id: "0", game_short_name: gameName } ] );
-//   });
+   bot.on("inline_query", function(iq) {
+     bot.answerInlineQuery(iq.id, [ { type: "game", id: "0", game_short_name: gameName } ] );
+   });
 
-    // bot.onText( /\/play (.+)/, function( msg, match ) {
+    bot.onText( /\/play (.+)/, function( msg, match ) {
 
-    //     switch( match[1] ) {
+        switch( match[1] ) {
       
-    //         case "assholehunter":
+             case "assholehunter":
       
-    //             bot.sendGame(
+                 bot.sendGame(
       
-    //                 fromId,
+                     fromId,
       
-    //                 "assholehunter",
+                    "jaba",
       
-    //                 {
+                     {
       
-    //                     reply_markup: JSON.stringify({
+                         reply_markup: JSON.stringify({
       
-    //                         inline_keyboard: [
+                             inline_keyboard: [
       
-    //                             [ { text: "Play", callback_game: JSON.stringify( { game_short_name: "assholehunter" } ) } ],
+                                 [ { text: "Play", callback_game: JSON.stringify( { game_short_name: "jaba" } ) } ],
       
-    //                             [ { text: "Share", url: "https://telegram.me/prozbotskiBot" } ]
+                                 [ { text: "Share", url: "https://telegram.me/jababababot" } ]
       
-    //                         ]
+                             ]
       
-    //                     })
+                         })
       
-    //                 }
+                     }
       
-    //             );
+                 );
       
-    //             break;
+                break;
       
-    //         default:
+             default:
       
-    //             bot.sendMessage( fromId, "Sorry " + msg.from.first_name + ", but this game doesn’t exist.." );
+                bot.sendMessage( fromId, "Sorry " + msg.from.first_name + ", but this game doesn’t exist.." );
       
-    //     }
+        }
       
-    // //   } );
-    // server.listen(port);  
+        } );
+     server.listen(port);  
