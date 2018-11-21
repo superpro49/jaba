@@ -3,7 +3,7 @@
  */
 /* eslint-disable no-console */
 
-const TOKEN = process.env.TELEGRAM_TOKEN || '607223777:AAEz8mJFpZtuquRFCYmc-SbtyXwKqtWX1lU';
+const TOKEN = process.env.TELEGRAM_TOKEN || '';
 const gameName = process.env.TELEGRAM_GAMENAME || 'jaba';
 // Specify '0' to use ngrok i.e. localhost tunneling
 let url = process.env.URL || 'https://telegram.me/JabaBabaBot?game=game1';
