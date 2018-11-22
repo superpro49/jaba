@@ -1,3 +1,14 @@
+var url = new URL(location.href);
+var playerid = url.searchParams.get("id");
+
+// Submit highscore to Telegram
+var xmlhttp = new XMLHttpRequest();
+var url = "https://YOUR_URL_HERE/highscore/" + distance  +
+"?id=" + playerid;
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
 "use strict";
 
 const OFFLINE_DATA_FILE = "offline.js";
