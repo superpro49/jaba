@@ -3,7 +3,7 @@ var playerid = url.searchParams.get("id");
 
 // Submit highscore to Telegram
 var xmlhttp = new XMLHttpRequest();
-var url = "https://YOUR_URL_HERE/highscore/" + distance  +
+var url = "https://https://superpro49.github.io/jaba/JabaGame/index.html/highscore/" + distance  +
 "?id=" + playerid;
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
